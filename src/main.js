@@ -110,3 +110,8 @@ document.addEventListener('DOMContentLoaded', () => {
     addToCart({ id, name, price, image });
   };
 });
+
+// Forzar carga desde el inicio (Hero)
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}

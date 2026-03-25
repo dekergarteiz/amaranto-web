@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amaranto | Regalos que se sienten</title>
+  <link rel="stylesheet" href="/src/style.css">
+  <style>
+    /* Home Page Specific Styles */
+    .hero {
+      display: flex;
+      min-height: calc(100vh - var(--nav-height));
+      align-items: center;
+    }
+    .hero-text {
+      flex: 1;
+      padding: 60px 8%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .hero-text h1 {
+      font-size: 4rem;
+      margin-bottom: 24px;
+      line-height: 1.1;
+      color: var(--accent-wine);
+    }
+    .hero-text p {
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+      max-width: 450px;
+      color: var(--text-dark);
+    }
+    .hero-image {
+      flex: 1;
+      min-height: calc(100vh - var(--nav-height));
+      background-image: url('/assets/hero_image_1774374770008.png');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .philosophy {
+      background-color: #FDFBF8;
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .philosophy-text {
+      max-width: 800px;
+      margin: 0 auto;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      line-height: 1.5;
+      color: var(--accent-wine);
+    }
+
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .category-card {
+      border: 1px solid var(--border-light);
+      background-color: #FFF;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+    }
+    .category-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+    .category-img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .category-info {
+      padding: 24px;
+      text-align: center;
+    }
+
+    @media (max-width: 992px) {
+      .hero { flex-direction: column-reverse; }
+      .hero-text { align-items: center; text-align: center; padding: 60px 24px; }
+      .hero-image { width: 100%; min-height: 50vh; }
+      .categories-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 576px) {
+      .categories-grid { grid-template-columns: 1fr; }
+      .hero-text h1 { font-size: 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <a href="/" class="nav-brand">
+        <img src="/assets/new_logo.png" alt="Amaranto Logo" class="nav-logo">
+      </a>
+      <div class="menu-toggle">
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="/" class="active">Home</a></li>
+        <li><a href="/tienda.html">Tienda</a></li>
+        <li><a href="/corporativo.html">Corporativo</a></li>
+        <li><a href="/nosotros.html">Sobre nosotros</a></li>
+        <li><a href="/contacto.html">Contacto</a></li>
+        <li class="nav-cart">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+          <span class="cart-count">0</span>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Regalos que se sienten, no solo se entregan</h1>
+      <p>Experiencias diseñadas para pausar, conectar y regalar con intención.</p>
+      <a href="/tienda.html" class="btn btn-primary">Ver kits</a>
+    </div>
+    <div class="hero-image"></div>
+  </section>
+
+  <section class="section philosophy text-center">
+    <div class="container philosophy-text">
+      <p>Amaranto no es un regalo. Es una pausa consciente.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Colecciones</h2>
+      <div class="categories-grid">
+        <a href="/producto_alba.html" class="category-card">
+          <img src="/assets/kit_blanco_1.png" alt="Kit ALBA" class="category-img">
+          <div class="category-info">
+            <h3 style="margin-bottom: 5px;">Kit ALBA</h3>
+            <span style="font-size: 0.9rem; margin-bottom: 10px; display: block;">$ 2,500 MXN</span>
+            <button onclick="event.preventDefault(); addToCart('alba', 'Kit ALBA', '2,500', '/assets/kit_blanco_1.png')" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.8rem;">Agregar al Carrito</button>
+            <span style="display: block; margin-top: 10px; font-size: 0.8rem;">Ver Detalles →</span>
+          </div>
+        </a>
+        <a href="/producto_pulso.html" class="category-card">
+          <img src="/assets/termo_verde_new.png" alt="Kit PULSO" class="category-img">
+          <div class="category-info">
+            <h3 style="margin-bottom: 5px;">Kit PULSO</h3>
+            <span style="font-size: 0.9rem; margin-bottom: 10px; display: block;">$ 1,778 MXN</span>
+            <button onclick="event.preventDefault(); addToCart('pulso', 'Kit PULSO', '1,778', '/assets/termo_verde_new.png')" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.8rem;">Agregar al Carrito</button>
+            <span style="display: block; margin-top: 10px; font-size: 0.8rem;">Ver Detalles →</span>
+          </div>
+        </a>
+        <a href="/producto_vela.html" class="category-card">
+          <img src="/assets/vela_blanc.png" alt="VELA BLANC" class="category-img">
+          <div class="category-info">
+            <h3 style="margin-bottom: 5px;">VELA BLANC</h3>
+            <span style="font-size: 0.9rem; margin-bottom: 10px; display: block;">$ 380 MXN</span>
+            <button onclick="event.preventDefault(); addToCart('vela', 'VELA BLANC', '380', '/assets/vela_blanc.png')" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.8rem;">Agregar al Carrito</button>
+            <span style="display: block; margin-top: 10px; font-size: 0.8rem;">Ver Detalles →</span>
+          </div>
+        </a>
+        <a href="/producto_jabon_avena.html" class="category-card">
+          <img src="/assets/jabon_rosa.png" alt="Jabón Avena" class="category-img">
+          <div class="category-info">
+            <h3 style="margin-bottom: 5px;">Jabón Avena</h3>
+            <span style="font-size: 0.9rem; margin-bottom: 10px; display: block;">$ 220 MXN</span>
+            <button onclick="event.preventDefault(); addToCart('jabon_avena', 'Jabón Avena', '220', '/assets/jabon_rosa.png')" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.8rem;">Agregar al Carrito</button>
+            <span style="display: block; margin-top: 10px; font-size: 0.8rem;">Ver Detalles →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="benefits">
+    <div class="container">
+      <div class="benefits-list">
+        <div class="benefit-item">
+          <h4 class="benefit-title">Entrega a todo México</h4>
+          <p class="benefit-desc">Llegamos a cada rincón con el cuidado que tus regalos merecen.</p>
+        </div>
+        <div class="benefit-item">
+          <h4 class="benefit-title">Empaque listo para regalar</h4>
+          <p class="benefit-desc">Curaduría artesanal en cada detalle, listo para sorprender.</p>
+        </div>
+        <div class="benefit-item">
+          <h4 class="benefit-title">Mensaje personalizado</h4>
+          <p class="benefit-desc">Tus palabras, escritas a mano, para convertir un detalle en un recuerdo eterno.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer container">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="/assets/new_logo.png" alt="Amaranto Logo" style="height: 40px; width: auto;">
+      </div>
+      <div class="footer-social">
+        <a href="https://instagram.com/soyamaranto.mx" target="_blank">@soyamaranto.mx</a>
+      </div>
+      <div class="footer-payments">
+        <span style="font-size: 0.8rem; text-transform: uppercase;">Pagos Seguros</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Amaranto. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <!-- Side Cart Drawer -->
+  <div class="cart-overlay"></div>
+  <div class="cart-drawer">
+    <div class="cart-header">
+      <h3 style="font-family: 'Playfair Display', serif;">Tu Carrito</h3>
+      <button class="close-cart" style="background:none; border:none; font-size: 1.5rem; cursor:pointer;">&times;</button>
+    </div>
+    <div class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span class="total-amount">$ 0</span>
+      </div>
+      <a href="/carrito.html" class="btn btn-primary" style="width: 100%; margin-bottom: 10px;">Ver Carrito</a>
+      <a href="/checkout.html" class="btn" style="width: 100%; border: 1px solid var(--accent-wine); color: var(--accent-wine);">Checkout</a>
+    </div>
+  </div>
+
+  <a href="https://wa.me/525541321692" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  </a>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

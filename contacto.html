@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto | Amaranto</title>
+  <link rel="stylesheet" href="/src/style.css">
+  <style>
+    .contact-layer {
+      display: flex;
+      min-height: calc(100vh - var(--nav-height) - 100px);
+      align-items: center;
+      gap: 60px;
+      padding: 60px 0;
+    }
+    .contact-info {
+      flex: 1;
+    }
+    .contact-info h1 {
+      font-size: 3rem;
+      color: var(--accent-wine);
+      margin-bottom: 20px;
+    }
+    .contact-info p {
+      font-size: 1.1rem;
+      color: var(--text-dark);
+      margin-bottom: 40px;
+    }
+    
+    .contact-methods {
+      list-style-type: none;
+    }
+    .contact-methods li {
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 1.1rem;
+    }
+    .contact-methods li svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--accent-wine);
+      stroke-width: 2;
+      fill: none;
+    }
+
+    .contact-form-container {
+      flex: 1;
+      background-color: #FFF;
+      padding: 50px;
+      border: 1px solid var(--border-light);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.03);
+    }
+    .contact-form-container h2 {
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      color: var(--text-dark);
+    }
+    
+    .form-group {
+      margin-bottom: 24px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid var(--border-light);
+      background-color: var(--bg-cream);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+    }
+    .form-group input:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent-wine);
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    .btn-submit {
+      width: 100%;
+      padding: 18px;
+      font-size: 1rem;
+    }
+
+    @media (max-width: 900px) {
+      .contact-layer {
+        flex-direction: column;
+      }
+      .contact-form-container {
+        width: 100%;
+        padding: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <a href="/" class="nav-brand">
+        <img src="/assets/new_logo.png" alt="Amaranto Logo" class="nav-logo">
+      </a>
+      <div class="menu-toggle">
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tienda.html">Tienda</a></li>
+        <li><a href="/corporativo.html">Corporativo</a></li>
+        <li><a href="/nosotros.html">Sobre nosotros</a></li>
+        <li><a href="/contacto.html" class="active">Contacto</a></li>
+        <li class="nav-cart">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+          <span class="cart-count">0</span>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container contact-layer">
+    <div class="contact-info">
+      <h1>Hablemos</h1>
+      <p>Ya sea que tengas dudas sobre un kit, quieras personalizar un regalo especial o solo quieras decir hola, estamos aquí para escucharte.</p>
+      
+      <ul class="contact-methods">
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          <a href="mailto:hola@soyamaranto.mx">hola@soyamaranto.mx</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <a href="https://wa.me/5211234567890" target="_blank">+52 1 1234 5678 90</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          <a href="https://instagram.com/soyamaranto.mx" target="_blank">@soyamaranto.mx</a>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="contact-form-container">
+      <h2>Envíanos un mensaje</h2>
+      <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Mensaje enviado.');">
+        <div class="form-group">
+          <label for="name">Nombre</label>
+          <input type="text" id="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Correo Electrónico</label>
+          <input type="email" id="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Tu Mensaje</label>
+          <textarea id="message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-submit">Enviar Mensaje</button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer container">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="/assets/new_logo.png" alt="Amaranto Logo" style="height: 40px; width: auto;">
+      </div>
+      <div class="footer-social">
+        <a href="https://instagram.com/soyamaranto.mx" target="_blank">@soyamaranto.mx</a>
+      </div>
+      <div class="footer-payments">
+        <span style="font-size: 0.8rem; text-transform: uppercase;">Pagos Seguros:</span>
+        <svg fill="var(--accent-wine)" height="24" viewBox="0 0 24 24" width="24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+        <span style="font-size: 0.8rem; font-weight: 600;">Mercado Pago</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Amaranto. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <a href="https://wa.me/525541321692" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  </a>
+
+  <!-- Side Cart Drawer -->
+  <div class="cart-overlay"></div>
+  <div class="cart-drawer">
+    <div class="cart-header">
+      <h3 style="font-family: 'Playfair Display', serif;">Tu Carrito</h3>
+      <button class="close-cart" style="background:none; border:none; font-size: 1.5rem; cursor:pointer;">&times;</button>
+    </div>
+    <div class="cart-items">
+      <!-- Generated by JS -->
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span class="total-amount">$ 0</span>
+      </div>
+      <a href="/carrito.html" class="btn btn-primary" style="width: 100%; margin-bottom: 10px;">Ver Carrito</a>
+      <a href="/checkout.html" class="btn" style="width: 100%; border: 1px solid var(--accent-wine); color: var(--accent-wine);">Checkout</a>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+
+  <a href="https://wa.me/525541321692" class="whatsapp-float" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>\n</body>
+</html>

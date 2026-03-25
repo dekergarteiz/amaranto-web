@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tienda | Amaranto</title>
+  <link rel="stylesheet" href="/src/style.css">
+  <style>
+    .store-header {
+      padding: 60px 0 20px;
+      text-align: center;
+    }
+    .store-header h1 {
+      font-size: 3rem;
+      color: var(--accent-wine);
+      margin-bottom: 10px;
+    }
+    .store-header p {
+      color: var(--text-light);
+      font-size: 1.1rem;
+    }
+    
+    .filters {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .filter-btn {
+      background: none;
+      border: none;
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      cursor: pointer;
+      color: var(--text-dark);
+      padding-bottom: 5px;
+    }
+    .filter-btn.active {
+      color: var(--accent-wine);
+      border-bottom: 2px solid var(--accent-wine);
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-top: 50px;
+    }
+    .product-card {
+      text-align: center;
+      transition: transform 0.3s ease;
+      background-color: #FFF;
+      border: 1px solid var(--border-light);
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+    .product-img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .product-info {
+      padding: 24px;
+    }
+    .product-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      margin-bottom: 5px;
+      color: var(--text-dark);
+    }
+    .product-price {
+      font-weight: 500;
+      color: var(--text-light);
+      margin-bottom: 20px;
+    }
+    .btn-shop {
+      padding: 10px 24px;
+      font-size: 0.8rem;
+    }
+    
+    @media (max-width: 992px) {
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 576px) {
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+      .filters {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <a href="/" class="nav-brand">
+        <img src="/assets/new_logo.png" alt="Amaranto Logo" class="nav-logo">
+      </a>
+      <div class="menu-toggle">
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tienda.html" class="active">Tienda</a></li>
+        <li><a href="/corporativo.html">Corporativo</a></li>
+        <li><a href="/nosotros.html">Sobre nosotros</a></li>
+        <li><a href="/contacto.html">Contacto</a></li>
+        <li class="nav-cart">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+          <span class="cart-count">0</span>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container" style="min-height: 60vh;">
+    <div class="store-header">
+      <h1>Nuestras Colecciones</h1>
+      <p>Encuentra la experiencia perfecta para cada persona</p>
+    </div>
+
+    <div class="filters">
+      <button class="filter-btn active">Todos</button>
+      <button class="filter-btn">Mujer</button>
+      <button class="filter-btn">Hombre</button>
+      <button class="filter-btn">Pareja</button>
+      <button class="filter-btn">Corporativo</button>
+    </div>
+
+    <div class="products-grid">
+      <!-- Product 1: PULSO -->
+      <a href="/producto_pulso.html" class="product-card">
+        <img src="/assets/termo_verde_new.png" alt="Kit PULSO" class="product-img">
+        <div class="product-info">
+          <h3 class="product-name">Kit PULSO</h3>
+          <p class="product-price">$ 1,778 MXN</p>
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <button onclick="event.preventDefault(); addToCart('pulso', 'Kit PULSO', '1,778', '/assets/termo_verde_new.png')" class="btn btn-primary btn-shop">Agregar al Carrito</button>
+            <span class="btn btn-shop" style="border:1px solid var(--border-light); background:none; color:var(--text-dark);">Ver Detalles</span>
+          </div>
+        </div>
+      </a>
+      
+      <!-- Product 2: ALBA -->
+      <a href="/producto_alba.html" class="product-card">
+        <img src="/assets/kit_blanco_1.png" alt="Kit ALBA" class="product-img">
+        <div class="product-info">
+          <h3 class="product-name">Kit ALBA</h3>
+          <p class="product-price">$ 2,500 MXN</p>
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <button onclick="event.preventDefault(); addToCart('alba', 'Kit ALBA', '2,500', '/assets/kit_blanco_1.png')" class="btn btn-primary btn-shop">Agregar al Carrito</button>
+            <span class="btn btn-shop" style="border:1px solid var(--border-light); background:none; color:var(--text-dark);">Ver Detalles</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Product 3: VELA BLANC -->
+      <a href="/producto_vela.html" class="product-card">
+        <img src="/assets/vela_blanc.png" alt="VELA BLANC" class="product-img">
+        <div class="product-info">
+          <h3 class="product-name">VELA BLANC</h3>
+          <p class="product-price">$ 380 MXN</p>
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <button onclick="event.preventDefault(); addToCart('vela', 'VELA BLANC', '380', '/assets/vela_blanc.png')" class="btn btn-primary btn-shop">Agregar al Carrito</button>
+            <span class="btn btn-shop" style="border:1px solid var(--border-light); background:none; color:var(--text-dark);">Ver Detalles</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Product 4: Jabón Avena -->
+      <a href="/producto_jabon_avena.html" class="product-card">
+        <img src="/assets/jabon_rosa.png" alt="Jabón Avena & Rosas" class="product-img">
+        <div class="product-info">
+          <h3 class="product-name">Jabón Avena</h3>
+          <p class="product-price">$ 220 MXN</p>
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <button onclick="event.preventDefault(); addToCart('jabon_avena', 'Jabón Avena & Rosas', '220', '/assets/jabon_rosa.png')" class="btn btn-primary btn-shop">Agregar al Carrito</button>
+            <span class="btn btn-shop" style="border:1px solid var(--border-light); background:none; color:var(--text-dark);">Ver Detalles</span>
+          </div>
+        </div>
+      </a>
+      
+      <!-- Product 5: Jabón Cacao -->
+      <a href="/producto_jabon.html" class="product-card">
+        <img src="/assets/jabon_cacao.png" alt="Jabón artesanal Cacao & Lavanda" class="product-img">
+        <div class="product-info">
+          <h3 class="product-name">Jabón Cacao</h3>
+          <p class="product-price">$ 180 MXN</p>
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <button onclick="event.preventDefault(); addToCart('jabon', 'Jabón Cacao', '180', '/assets/jabon_cacao.png')" class="btn btn-primary btn-shop">Agregar al Carrito</button>
+            <span class="btn btn-shop" style="border:1px solid var(--border-light); background:none; color:var(--text-dark);">Ver Detalles</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <footer class="footer container">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="/assets/new_logo.png" alt="Amaranto Logo" style="height: 40px; width: auto;">
+      </div>
+      <div class="footer-social">
+        <a href="https://instagram.com/soyamaranto.mx" target="_blank">@soyamaranto.mx</a>
+      </div>
+      <div class="footer-payments">
+        <span style="font-size: 0.8rem; text-transform: uppercase;">Pagos Seguros:</span>
+        <svg fill="var(--accent-wine)" height="24" viewBox="0 0 24 24" width="24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+        <span style="font-size: 0.8rem; font-weight: 600;">Mercado Pago</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <!-- Side Cart Drawer -->
+  <div class="cart-overlay"></div>
+  <div class="cart-drawer">
+    <div class="cart-header">
+      <h3 style="font-family: 'Playfair Display', serif;">Tu Carrito</h3>
+      <button class="close-cart" style="background:none; border:none; font-size: 1.5rem; cursor:pointer;">&times;</button>
+    </div>
+    <div class="cart-items">
+      <!-- Generated by JS -->
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span class="total-amount">$ 0</span>
+      </div>
+      <a href="/carrito.html" class="btn btn-primary" style="width: 100%; margin-bottom: 10px;">Ver Carrito</a>
+      <a href="/checkout.html" class="btn" style="width: 100%; border: 1px solid var(--accent-wine); color: var(--accent-wine);">Checkout</a>
+    </div>
+  </div>
+
+  <a href="https://wa.me/525541321692" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  </a>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
